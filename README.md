@@ -124,4 +124,4 @@ tampilanya seperti ini:
 ![](https://github.com/Rezaaisyi/Jarkom_Modul3_Lapres_T18/blob/main/img/11.PNG)
 
 ### Nomer 12 
-Buat seperti bikin domain di modul 2 (tapi belom berhasil :sob: :sob:
+Buat seperti bikin domain di modul 2 ( tapi belom berhasil :sob: :sob: )
