@@ -22,27 +22,26 @@ Setelah dijalankan, edit interfaces di Malang, Mojokerto, Surabaya, dan Tuban
 
 ![](https://github.com/Rezaaisyi/Jarkom_Modul3_Lapres_T18/blob/main/img/1%20etc%20network%20interface%20tuban.PNG)
 
+kemudian lakukan ```service networking restart```
+
 ### Nomer 2
-Setup dhcp di Tuban seperti gambar berikut
+```apt-get install isc-dhcp-server``` di Tuban. Buka ```/etc/default/isc-dhcp-server```dan masukkan ```eth0``` pada ```INTERFACESv4=""```
 
 ![](https://github.com/Rezaaisyi/Jarkom_Modul3_Lapres_T18/blob/main/img/2.1%20setup%20dhcp%20d%20tuban.PNG)
 
-Setup dhcp relay (gunakan isc-dhcp-relay) di Surabaya
+```apt-get install isc-dhcp-relay``` di Surabaya. Buka ```/etc/default/isc-dhcp-relay``` dan masukkan IP Tuban pada ```SERVERS=""``` dan ```eth1 eth2 eth3``` pada ```INTERFACES=""```
 
 ![](https://github.com/Rezaaisyi/Jarkom_Modul3_Lapres_T18/blob/main/img/2.2%20set%20relay%20di%20sby%20(setelah%20install%20isc%20dhcp%20relay).PNG)
 
-Edit ```/etc/dhcp/dhcpd.conf``` di Tuban seperti gambar berikut
+Kemudian ```service isc-dhcp-server restart``` di Tuban dan ```service isc-dhcp-relay restart``` di Surabaya
 
 ![](https://github.com/Rezaaisyi/Jarkom_Modul3_Lapres_T18/blob/main/img/2.3%20dhcp%20conf%20di%20tuban.PNG)
-
-Cek relay di Surabaya
 
 ![](https://github.com/Rezaaisyi/Jarkom_Modul3_Lapres_T18/blob/main/img/2.4%20sby%20berhasil%20relay.PNG)
 
 
 ### Nomer 3
-
-Setup subnet Tuban untuk client Gresik dan Sidoarjo
+Edit ```/etc/dhcp/dhcpd.conf``` untuk memasukkan subnet 1 -> client gresik dan sidoarjo. Kemudian restart dhcp
 
 ![](https://github.com/Rezaaisyi/Jarkom_Modul3_Lapres_T18/blob/main/img/3.1%20setup%20subnet%20tuban%20client%20gresik%20sidoarjo.PNG)
 
@@ -52,7 +51,7 @@ Edit interface Gresik dan Sidoarjo seperti gambar berikut
 
 ![](https://github.com/Rezaaisyi/Jarkom_Modul3_Lapres_T18/blob/main/img/3.3%20interface%20sidoarjo.PNG)
 
-Hasil subnet Gresik dan Sidoarjo
+Hasil subnet Gresik dan Sidoarjo dapat dilihat pada gambar berikut
 
 ![](https://github.com/Rezaaisyi/Jarkom_Modul3_Lapres_T18/blob/main/img/3.4%20hasil%20subnet1%20gresik.PNG)
 
@@ -61,7 +60,7 @@ Hasil subnet Gresik dan Sidoarjo
 
 
 ### Nomer 4
-Setup subnet di Tuban untuk client Banyuwangi dan Madiun
+Edit ```/etc/dhcp/dhcpd.conf``` untuk memasukkan subnet 1 -> client Banyuwangi dan Madiun. Kemudian restart dhcp
 
 ![](https://github.com/Rezaaisyi/Jarkom_Modul3_Lapres_T18/blob/main/img/4.1%20setup%20subnet%20tuban%20client%20banyuwangi%20madiun.PNG)
 
